@@ -1,0 +1,106 @@
+html{
+  font-size: 10px;/* 10px = 1rem lo usamos como medida relativa, esto quiere decir que si cambiamos el tamaño de la fuente del html, todo lo demás se ajustará en proporción */
+  /* 1rem = 10px, por lo tanto 1.6rem = 16px, 1.5rem = 15px, etc.      
+*/
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;/* 1.6rem = 16px */  
+}
+.layout{
+  width: 100%;/*anchura caja principal*/
+  min-height: 100%;/*altura minima de  caja principal*/
+  position: absolute;/*va a estar siempre en el mismo sitio*/
+  /* <!todos los elementos del layout van a tener un posicionamiento central */
+  display: flex;/*usamos flexbox*/
+  justify-content: center;/*centramos horizontalmente*/
+  align-items: center;/*centramos verticalmente*/
+  background-color: #988098;
+}
+/* <!-- Layout Main es toda la tarjeta completa  --> */
+.layout__main{
+  min-width: 40rem;/*anchura minima de la caja principal*/
+  border: 2rem;
+  border-width: 2rem;
+
+  background-color: white;
+  /*box-shadow: 0px 0px 10px red;/*es la sombra que va a tener la caja en este caso 0px 0px en eje x e y y difuminacion de 13px*/
+  border-radius: 20px;/*bordes redondeados para que no se vea los bordes blancos*/
+}
+
+.main__user{
+  width: 100%;
+  display: flex;/*usamos flexbox*/
+  flex-direction: column;/*los elementos van a estar en columna*/
+  align-items: center;/*centramos los elementos en el eje x*/
+  padding-bottom: 3rem;/*espacio interno de la caja*/
+  background-color: #C0b8c0;
+  border-radius: 10px 10px 0 0 ;/*bordes redondeados de izq der de arriab y los de abajo estan rectos*/
+}
+.user__container-img{
+  width: 13rem;
+  height: 13rem;
+  background-color: white;
+  padding: 0.5rem;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+  border-radius: 13rem;/*para que sea circular*/
+
+}
+
+.user__img{
+  width: 100%;
+  height: 100%;
+  border-radius: 13rem;/*para que sea circular*/
+  object-fit: cover;/*para que la imagen se ajuste al contenedor sin deformarse*/
+  background-color: #e8e8e8;/*le doy color de fondo a la imagen*/
+}
+
+.user__content{
+  text-align: center;/*centramos el texto*/
+  margin-bottom: 0.5rem;/*margen inferior del texto*/
+}
+.user__name{
+  color: white;/*color del texto*/
+  font-weight: 600;/*negrita del texto*/
+  margin-right: 0.3rem;/*margen derecho del texto*/
+  cursor:pointer;/*cursor de mano al pasar por encima del texto*/
+}
+.user__city,.user__nickname{
+  color:white;/*color del texto*/
+  font-weight: 500;/*normal del texto*/
+  opacity: 0.8;/*opacidad del texto*/
+}
+
+.main__follows{
+  display: flex;/*usamos flexbox*/
+  flex-direction: row;/*los elementos van a estar en fila*/
+  justify-content: space-between;/*espacio entre los elementos*/
+  gap: 1.5em;/*espacio entre los elementos*/
+  margin: 3rem 0;/*margen superior e inferior de 3rem*/
+  padding: 0 4rem;/*espacio interno de la caja*/
+  text-align: center;/*centramos el texto*/
+}
+.follows__follow{
+  border: 2px solid transparent;/*borde de la caja*/
+  border-radius: 10px;/*bordes redondeados de la caja*/ 
+  padding: 0.5rem;/*espacio interno de la caja*/
+  cursor: pointer;/*cursor de mano al pasar por encima*/
+  transition: all 500ms ease-in-out;/*transicion de 300ms al pasar por encima*/
+  
+}
+.follows__follow:hover{
+  border-color: #988098;/*cambio de color del borde al pasar por encima*/  
+}
+.follow__subtitulo{
+  color: #191919;
+  font-weight: 600;/*negrita del texto*/
+  font-size: 1.4rem;
+  opacity: 0.5;/*opacidad del texto*/
+}
+.follow__number{
+  color: #202028;
+  font-weight: 700;/*negrita del texto*/
+  font-size: 2rem;
+}
