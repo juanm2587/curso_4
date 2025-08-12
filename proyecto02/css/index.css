@@ -17,6 +17,12 @@ body{
   justify-content: center;/*centramos horizontalmente*/
   align-items: center;/*centramos verticalmente*/
   background-color: #988098;
+
+  /*-------------------------Css Slide de imagen de fondo---------------------------------------------*/
+  background-size: contain;/*ahora cubre toda la pantalla*/
+  background-position: center;/*centramos la imagen de fondo*/  
+  /*background-repeat: no-repeat;/*no repetimos la imagen de fondo*/
+  /*-------------------------------------------------------------------------*/
 }
 /* <!-- Layout Main es toda la tarjeta completa  --> */
 .layout__main{
@@ -114,14 +120,6 @@ body{
   margin-top: 24px;
   padding: 24px;
   text-align: center;
-}
-
-.music__title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #333;
 }
 
 .music__player audio {
