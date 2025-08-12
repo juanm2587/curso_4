@@ -104,3 +104,28 @@ body{
   font-weight: 700;/*negrita del texto*/
   font-size: 2rem;
 }
+
+
+/*Seccion de musica*/
+.layout__music {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-top: 24px;
+  padding: 24px;
+  text-align: center;
+}
+
+.music__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.music__player audio {
+  width: 100%;
+  max-width: 350px;
+  outline: none;
+}
