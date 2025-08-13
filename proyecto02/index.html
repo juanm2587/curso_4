@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/index.css">
-  <title>Proyecto02</title>
+    <link rel="icon" href="img/sticht.png" type="image/png">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Lilo & Sticht</title>
 </head>
+
 <body>
-    
+
   <div class="layout" id="layout__slide"><!--Agregamos ID para slide de fondo-->
     <main class="layout__main"><!-- Layout Main es toda la tarjeta completa  -->
-      
+
       <!-- --------- Usuario --------- -->
       <div class="main__user">
         <figure class="user__container-img">
@@ -31,7 +34,7 @@
 
 
       <!-- --------- Redes --------- -->
-      
+
       <div class="main__follows">
         <div class="follows__follow">
           <p class="follow__number">
@@ -41,7 +44,7 @@
             Seguidores
           </p>
         </div>
-      
+
         <div class="follows__follow">
           <p class="follow__number">
             2K
@@ -60,9 +63,9 @@
           </p>
         </div>
       </div>
-      <section class="layout__music">        
+      <section class="layout__music">
         <div class="music__player">
-          <audio src="./audio/hawaiian-roller-coaster-ride-from-lilo-stitch-128-ytshorts.savetube.me.mp3" controls loop></audio>
+          <audio src="./audio/elvis-presley-you-re-the-devil-in-disguise.mp3" controls loop></audio>
         </div>
       </section>
     </main>
@@ -70,18 +73,20 @@
   <!-- Scripte para agregar slide de imagenes de fondo -->
   <script>
     const images = [
-      '/proyecto02/img/sticht0.jpg',
-      '/proyecto02/img/sticht1.jpg',
-      '/proyecto02/img/sticht3.jpg'      
+      "/proyecto02/img/sticht0.jpg",
+      "/proyecto02/img/sticht1.jpg",
+      "/proyecto02/img/sticht3.jpg",
     ];
     let current = 0;
-    const slider = document.querySelector('#layout__slide');
+    const slider = document.querySelector("#layout__slide");
     function changeBackground() {
       slider.style.backgroundImage = `url('${images[current]}')`;
       current = (current + 1) % images.length;
     }
     changeBackground();
     setInterval(changeBackground, 2000); // Cambia cada 4 segundos
+
   </script>
 </body>
+
 </html>
