@@ -1,0 +1,142 @@
+html, body {  
+  margin: 0; /* Elimina el margen por defecto del navegador */
+  padding: 0; /* Elimina el padding por defecto del navegador */
+  overflow-x: hidden; /* Oculta la barra de scroll horizontal */
+  box-sizing: border-box; /* Usa el modelo de caja border-box para todo */
+}
+
+.layout__h1 {
+  grid-column: 1 / -1; /* El título ocupa todo el ancho del grid */
+  font-family: 'Guardians', 'Poppins', sans-serif; /* Fuente personalizada y de respaldo */
+  font-size: 3.2rem; /* Tamaño grande para el título */
+  color: #fff; /* Color blanco para el texto */
+  text-align: center; /* Centra el texto */
+  margin-top: -50px; /* Sube el título hacia arriba */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  text-shadow: 0 2px 8px #222; /* Sombra para mejor visibilidad */
+  position: relative; /* Permite usar z-index */
+  z-index: 2; /* El título queda por encima del fondo */
+}
+
+.article__title{
+  font-family: 'Guardians', sans-serif; /* Fuente personalizada para títulos de tarjetas */
+  font-size: 2.4rem; /* Tamaño del título de la tarjeta */
+  color: #333; /* Color oscuro para el título */
+  margin-top: 1rem; /* Espacio arriba del título */
+  margin-bottom: 0.5rem; /* Espacio debajo del título */
+  z-index: 2; /* Por encima de la imagen */
+  position: relative; /* Permite usar z-index */
+}
+
+.article__img {
+  max-width: 100%; /* La imagen no excede el ancho de la tarjeta */
+  max-height: 25rem; /* Altura máxima de la imagen */
+  object-fit: cover; /* La imagen cubre el espacio sin deformarse */
+  border-radius: 0.8rem; /* Bordes redondeados */
+  transition: filter 0.4s; /* Transición suave para el filtro al hacer hover */
+}
+
+.article__description {
+  opacity: 0; /* Oculta la descripción por defecto */
+  transition: opacity 0.4s; /* Transición suave de opacidad */
+  position: absolute; /* Posiciona la descripción sobre la tarjeta */
+  top: 0; left: 0; /* Ocupa toda la tarjeta */
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Alto completo */
+  background: rgba(255,255,255,0.85); /* Fondo blanco semitransparente */
+  color: #222; /* Texto oscuro */
+  display: flex; /* Usa flexbox para centrar el texto */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  padding: 2rem; /* Espaciado interno */
+  text-align: center; /* Centra el texto */
+  border-radius: 1.2rem; /* Bordes redondeados */
+  font-size: 1.5rem; /* Tamaño del texto */
+  pointer-events: none; /* No permite interacción cuando está oculto */
+  z-index: 3; /* Por encima de la imagen */
+}
+
+.layout__article:hover .article__description {
+  opacity: 1; /* Muestra la descripción al hacer hover */
+  pointer-events: auto; /* Permite interacción cuando está visible */
+}
+
+.layout__article:hover .article__img {
+  filter: blur(0.1px) brightness(0.99); /* Aplica un leve difuminado y oscurecimiento a la imagen al hacer hover */
+}
+
+@font-face {
+  font-family: 'Guardians'; /* Nombre de la fuente personalizada */
+  src: url('/proyecto03/fonts/Guardians.ttf') format('truetype'); /* Ruta de la fuente */
+  font-weight: normal; /* Peso normal */
+  font-style: normal; /* Estilo normal */
+}
+
+.layout {
+  padding: 1.5rem 2rem 4rem 2rem; /* Espaciado interno (arriba, lados, abajo, lados) */
+  position: relative; /* Permite posicionar elementos hijos absolutamente */
+  width: 100vw; /* Ocupa todo el ancho de la ventana */
+  min-height: 100vh; /* Altura mínima igual a la ventana */
+  display: grid; /* Usa grid para organizar las tarjetas */
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 2rem; /* Espacio entre tarjetas */
+  justify-items: center; /* Centra las tarjetas horizontalmente */
+  align-items: center; /* Centra las tarjetas verticalmente */
+  padding: 4rem 2rem; /* Espaciado superior e inferior */
+  overflow: hidden; /* Oculta cualquier desbordamiento */
+}
+
+.layout > video {
+  position: fixed; /* Fija el video al fondo de la pantalla */
+  top: 0; left: 0; /* Posición inicial */
+  width: 100vw; /* Ancho completo de la ventana */
+  height: 100vh; /* Alto completo de la ventana */
+  object-fit: cover; /* El video cubre todo el fondo */
+  z-index: 0; /* Detrás de todo */
+  pointer-events: none; /* El video no bloquea clics */
+}
+
+.layout__article {
+  width: 22rem; /* Ancho fijo de la tarjeta */
+  height: 32rem; /* Alto fijo de la tarjeta */
+  position: relative; /* Permite posicionar elementos hijos absolutamente */
+  z-index: 1; /* Por encima del video */
+  background: rgba(255,255,255,0.85); /* Fondo blanco semitransparente */
+  border-radius: 1.2rem; /* Bordes redondeados */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12); /* Sombra */
+  overflow: hidden; /* Oculta desbordes */
+  display: flex; /* Usa flexbox para organizar el contenido */
+  flex-direction: column; /* Apila los elementos verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  padding: 1.5rem; /* Espaciado interno */
+  transition: transform 0.2s; /* Animación al hacer hover */
+  box-sizing: border-box; /* Incluye el padding en el tamaño */
+}
+
+.layout__article:hover {
+  transform: translateY(-8px) scale(1.04); /* Sube y agranda la tarjeta al hacer hover */
+}
+
+
+/* Responsivo: 1 columna en pantallas medianas */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr; /* Solo una columna */
+  }
+}
+
+/* Responsivo: Ajusta padding y tamaño en móviles */
+@media (max-width: 600px) {
+  .layout {
+    grid-template-columns: 1fr; /* Una columna */
+    padding: 2rem 0.5rem; /* Menos padding en móviles */
+  }
+  .layout__h1 {
+    margin-top: 0; /* O ajusta a un valor que te guste, por ejemplo 1rem */
+  }
+  .layout__article {
+    width: 22rem;      /* Mantiene el tamaño original */
+    min-height: 32rem; /* Mantiene la altura original */
+    padding: 1.5rem;   /* Espaciado interno */
+  }
+}
