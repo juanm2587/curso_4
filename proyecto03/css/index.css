@@ -5,18 +5,39 @@ html, body {
   box-sizing: border-box; /* Usa el modelo de caja border-box para todo */
 }
 
+/*
+<!-- ------------------------- Alternativa 1 ------------------------- -->
+Estilo css para el que h1 sea responsive
 .layout__h1 {
-  grid-column: 1 / -1; /* El título ocupa todo el ancho del grid */
-  font-family: 'Guardians', 'Poppins', sans-serif; /* Fuente personalizada y de respaldo */
-  font-size: 3.2rem; /* Tamaño grande para el título */
-  color: #fff; /* Color blanco para el texto */
-  text-align: center; /* Centra el texto */
-  margin-top: -50px; /* Sube el título hacia arriba */
-  letter-spacing: 2px; /* Espaciado entre letras */
-  text-shadow: 0 2px 8px #222; /* Sombra para mejor visibilidad */
-  position: relative; /* Permite usar z-index */
-  z-index: 2; /* El título queda por encima del fondo */
+  grid-column: 1 / -1; /* El título ocupa todo el ancho del grid 
+  font-family: 'Guardians', 'Poppins', sans-serif; /* Fuente personalizada y de respaldo 
+  font-size: 3.2rem; /* Tamaño grande para el título 
+  color: #fff; /* Color blanco para el texto 
+  text-align: center; /* Centra el texto 
+  margin-top: -50px; /* Sube el título hacia arriba 
+  letter-spacing: 2px; /* Espaciado entre letras 
+  text-shadow: 0 2px 8px #222; /* Sombra para mejor visibilidad 
+  position: relative; /* Permite usar z-index 
+  z-index: 2; /* El título queda por encima del fondo 
+} 
+  <!-- ------------------------- Alternativa 1 ------------------------- -->
+  */
+
+.layout__h1 {
+  grid-column: 1 / -1;   /* hace que el h1 abarque todo el ancho del grid: desde la 1ª línea hasta la última */
+  text-align: center;     /* centra el contenido inline dentro del h1 (el logo) */
+  margin-top: -50px;      /* margen superior negativo: empuja el h1 hacia arriba 50px */
+  position: relative;     /* crea un nuevo contexto de posicionamiento; permite usar z-index y posicionar hijos absolutos si hiciera falta */
+  z-index: 2;             /* coloca el h1 por encima de elementos con menor z-index (útil si hay video/fondo) */
 }
+
+.layout__h1 img.layout__logo {
+  max-width: 400px;  /* límite máximo del ancho del logo (cambiá este valor para hacerlo más grande/chico) */
+  width: 100%;       /* el logo ocupa el 100% del ancho disponible del contenedor, pero nunca supera el max-width */
+  height: auto;      /* mantiene la proporción original del logo al cambiar el ancho */
+}
+
+
 
 .article__title{
   font-family: 'Guardians', sans-serif; /* Fuente personalizada para títulos de tarjetas */
