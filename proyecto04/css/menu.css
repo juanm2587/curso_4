@@ -1,0 +1,184 @@
+/* RESET*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* box-sizing sirve para que el contenido no se desborde de las cajas */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1 rem = 10 px*/
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+/* ---------------Fuentes y Estilos--------------- */
+body {
+  font-size: 1.6rem;
+  line-height: 2;
+}
+h1,
+h2 {
+  font-family: "Playfair Display", serif;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+h2 {
+  font-size: 2.7rem;
+}
+p {
+  font-size: 1.25rem;
+}
+
+ul,
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+h2{
+  color: #fff;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite ajustar tarjetas en filas */
+  justify-content: space-between; /* Distribuye columnas uniformemente */
+  gap: 15px; /* Espaciado entre tarjetas */
+  padding: 20px;
+  max-width: 1000px; /* Limita el ancho del contenedor */
+  margin: 0 auto; /* Centra el contenedor en la pantalla */
+}
+
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid var(--color-beige-oscuro);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Organización en columna */
+  justify-content: space-between; /* Asegura que precio y botón estén en la parte inferior */
+  width: calc(28% - 10px); /* Cada tarjeta ocupa el 28% del ancho, más pequeña */
+  box-shadow: 0 2px 5px var(--color-beige-claro);
+  text-align: center;
+}
+
+.card img {
+  width: 100%; /* Imagen ocupa todo el ancho */
+  height: auto;
+  transition: transform 0.3s ease; /* Efecto de zoom en la imagen */
+}
+
+.card:hover img {
+  transform: scale(1.05); /* Zoom solo en la imagen */
+}
+
+.description {
+  padding: 10px; /* Espaciado interno */
+  display: flex;
+  flex-direction: column; /* Organización en columna */
+  justify-content: flex-end; /* Mantiene precio y botón alineados abajo */
+  flex-grow: 1; /* Hace que la descripción ocupe el espacio disponible */
+}
+
+.description p {
+  margin: 5px 0; /* Reducir márgenes entre texto */
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1em; /* Tamaño de fuente reducido */
+  color: #333;
+  margin-bottom: 8px; /* Espaciado ligero debajo del precio */
+}
+
+.add-to-cart {
+  display: inline-block;
+  padding: 6px 12px; /* Botón más pequeño */
+  background-color: var(--color-beige-oscuro);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: var(--color-beige-claro);
+}
+
+
+/* ---------------- Media Queries ---------------- */
+
+/* Para resoluciones 768x1024 y 1440x900 */
+@media (min-width: 768px) {
+  .card-container {
+    justify-content: space-between;
+  }
+
+  .card {
+    width: calc(30% - 10px); /* 3 columnas por fila con espacio, tarjetas más pequeñas */
+  }
+}
+
+/* Para pantallas más pequeñas (menos de 768px) */
+/* ---------------- Media Queries ---------------- */
+
+/* Para resoluciones 768x1024 */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .card-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten a nuevas filas */
+    justify-content: space-between; /* Distribuye las tarjetas uniformemente */
+    gap: 15px; /* Espaciado entre las tarjetas */
+    max-width: 1000px; /* Limita el ancho del contenedor */
+    margin: 0 auto; /* Centra el contenedor en la pantalla */
+  }
+
+  .card {
+    width: calc(33.33% - 10px); /* Tres tarjetas por fila (33.33% del ancho, con margen) */
+  }
+}
+.card-carrito {
+  grid-column: span 3; /* Ocupa tres columnas */
+  background-color: #f9f9f9;
+  border: 1px solid var(--color-beige-oscuro);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%; /* Se asegura que ocupe todo el ancho disponible */
+  box-shadow: 0 2px 5px var(--color-beige-claro);
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .card-carrito {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 767px) {
+  .card-carrito {
+    grid-column: span 1; /* Ocupa solo una columna en pantallas pequeñas */
+  }
+}
+
+
+/* Para pantallas más pequeñas (menos de 768px) */
+@media (max-width: 767px) {
+  .card-container {
+    flex-direction: column; /* Tarjetas en una sola columna */
+    gap: 10px; /* Espaciado reducido entre tarjetas */
+  }
+
+  .card {
+    width: 100%; /* Las tarjetas ocupan todo el ancho */
+  }
+}
+
