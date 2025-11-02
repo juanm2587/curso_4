@@ -221,7 +221,7 @@ input {
   font-family: var(--font-sans);
   font-size: 1.25rem;
   font-weight: 400;
-  color: var(--color-texto-claro);
+  color: var(--color-texto-oscuro);
 }
 
 input:focus,
