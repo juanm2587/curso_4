@@ -17,6 +17,8 @@ ol {
   flex-direction: column;
   align-items: center;
   padding: 30px 100px;
+  padding-top: calc(var(--header-height) + 30px);
+  padding-bottom: calc(var(--footer-height) + 30px);
 }
 .layout__header {
   position: absolute;
@@ -197,4 +199,63 @@ ol {
 
     }
   }
+}
+
+
+/* ---------------Formulario y Estilos--------------- */
+
+label {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--color-texto-claro);
+}
+
+input {
+  background-color: var(--color-texto-claro);
+  border: 2px solid var(--color-texto-oscuro);
+  width: 100%;
+  height: 3rem;
+  padding: 0.5rem;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--color-texto-claro);
+}
+
+input:focus,
+textarea:focus {
+  border: 2px solid var(--color-texto-claro);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-texto-oscuro);
+}
+h2{
+  color: var(--color-texto-claro);
+}
+textarea {
+  background-color: var(--color-texto-claro);
+  border: 2px solid var(--color-texto-oscuro);
+  width: 100%;
+  height: 9rem;
+  padding: 0.5rem;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--color-texto-oscuro);
+  resize: none;
+}
+/* VARIABLES EN CSS */
+:root {
+
+  --color-texto-oscuro: #191919;
+  --color-texto-claro: #fff;  
+  --font-sans: "sans-serif";
+  --header-height: 20px; /* alto aproximado del header */
+  --footer-height: 50px; /* alto aproximado del footer (o espacio de iconos) */
+
 }

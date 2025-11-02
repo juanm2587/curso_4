@@ -1,7 +1,7 @@
 // Datos de los productos
 const productos = [
   {
-    nombre: "Ongos",
+    nombre: "Balde de Pollo",
     descripcion: "Ongos deliciosos para tu disfrute.",
     imagen: "/img/pollo1.jpg",
     precio: 10000.0,
